@@ -6,8 +6,3 @@ function fetchData() {
     .then((data) => console.log(data))
 }
 
-console.log("commit test1")
-console.log("commit test2")
-console.log("commit test3")
-console.log("commit test4")
-console.log("commit test5")

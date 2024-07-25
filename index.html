@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail Finder</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="index.js"></script>
+  <header>
+    <h1>Cocktail Finder</h1>
+    <input type="text" id="search-input" placeholder="Search for a cocktail...">
+    <button id="search-button">Search</button>
+  </header>
+  <main>
+    <div id="cocktail-list"></div>
+    <div id="cocktail-details" class="hidden"></div>
+  </main>
+  <script src="app.js"></script>
 </body>
 </html>
