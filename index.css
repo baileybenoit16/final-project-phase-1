@@ -40,6 +40,7 @@ body {
     padding: 1rem;
     width: 200px;
     cursor: pointer;
+    background-color: white;
   }
   
   #cocktail-details {
