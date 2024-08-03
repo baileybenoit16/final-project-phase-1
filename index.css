@@ -13,6 +13,7 @@ body {
   
   header h1 {
     font-family: 'Brush Script MT', cursive;
+    font-size: 100px
   }
 
   header input, header button {
