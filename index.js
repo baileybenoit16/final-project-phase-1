@@ -1,6 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchData();
+    setupBackToTopButton();
 });
+
+function setupBackToTopButton() {
+    const backToTopButton = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    })
+}
 
 const cocktailList = document.getElementById('cocktail-list');
 const searchButton = document.getElementById('search-button');
