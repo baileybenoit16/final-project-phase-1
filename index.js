@@ -82,7 +82,10 @@ function displayCocktailDetails(cocktail) {
         <ul>${listIngredients(cocktail)}</ul>
     `;
     cocktailDetails.classList.remove('hidden');
+
+    cocktailDetails.scrollIntoView({ behavior: 'smooth'})
 }
+
 
 function listIngredients(cocktail) {
     let ingredients = '';
