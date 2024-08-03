@@ -1,18 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 });
+
+const cocktailList = document.getElementById('cocktail-list');
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
-const cocktailList = document.getElementById('cocktail-list');
 const cocktailDetails = document.getElementById('cocktail-details');
-
-function fetchData() {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
-    .then((resp) => resp.json())
-    .then((data) => {
-        displayDrinks(data.drinks);
-    });
-}
 
 function fetchData(searchTerm = 'margarita') {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
@@ -47,6 +40,7 @@ function displayCocktails(cocktails) {
     if (cocktails) {
         cocktails.forEach(cocktail => {
             const cocktailDiv = document.createElement('div');
+            cocktailDiv.classList.add('cocktail-item');
             cocktailDiv.innerHTML = `
                 <h3>${cocktail.strDrink}</h3>
                 <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" style="height: 100px;">
