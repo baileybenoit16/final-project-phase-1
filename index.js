@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 });
 
-const searchInput = document.getElementById('search-input');
+
 const cocktailList = document.getElementById('cocktail-list');
-const cocktailDetails = document.getElementById('cocktail-details');
 
 
-function fetchData(searchTerm = 'margarita') {
+
+function fetchData(searchTerm = 'blue') {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
     .then((resp) => resp.json())
     .then((data) => {
