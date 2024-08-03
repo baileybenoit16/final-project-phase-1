@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 });
 
-function fetchData(searchTerm = 'margarita') {
+function fetchData(searchTerm = '') {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
     .then((resp) => resp.json())
     .then((data) => {
