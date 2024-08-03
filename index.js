@@ -46,3 +46,13 @@ function displayCocktails(cocktails) {
     }
 }
 
+function displayCocktailDetails(cocktail) {
+    cocktailDetails.innerHTML = `
+        <h2>${cocktail.strDrink}</h2>
+        <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" style="height: 200px;">
+        <p><strong>Instructions:</strong> ${cocktail.strInstructions}</p>
+        <p><strong>Ingredients:</strong></p>
+        <ul>${listIngredients(cocktail)}</ul>
+    `;
+    cocktailDetails.classList.remove('hidden');
+}
