@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const cocktailList = document.getElementById('cocktail-list');
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
+const cocktailDetails = document.getElementById('cocktail-details');
 
 
 function fetchData(searchTerm = 'blue') {
@@ -55,4 +56,16 @@ function displayCocktailDetails(cocktail) {
         <ul>${listIngredients(cocktail)}</ul>
     `;
     cocktailDetails.classList.remove('hidden');
+}
+
+function listIngredients(cocktail) {
+    let ingredients = '';
+    for (let i = 1; i <= 15; i++) {
+        const ingredient = cocktail[`strIngredient${i}`];
+        const measure = cocktail[`strMeasure${i}`];
+        if (ingredient) {
+            ingredients += `<li>${ingredient} - ${measure}</li>`;
+        }
+    }
+    return ingredients;
 }
