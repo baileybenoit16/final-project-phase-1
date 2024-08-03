@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 });
 
-
 const cocktailList = document.getElementById('cocktail-list');
-
+const searchButton = document.getElementById('search-button');
+const searchInput = document.getElementById('search-input');
 
 
 function fetchData(searchTerm = 'blue') {
@@ -18,6 +18,13 @@ function fetchData(searchTerm = 'blue') {
         cocktailList.innerHTML = '<p>No results found. Try another search!</p>';
     });
 }
+
+searchButton.addEventListener('click', () => {
+    const searchTerm = searchInput.value;
+    if (searchTerm.trim()) {
+        fetchData(searchTerm);
+    }
+});
 
 function displayCocktails(cocktails) {
     cocktailList.innerHTML = '';
