@@ -49,6 +49,8 @@ body {
     padding: 1rem;
     margin-top: 2rem;
     background-color: white;
+    width: 80%;
+    max-width: 800px;
   }
   
   .hidden {
