@@ -11,6 +11,10 @@ body {
     text-align: center;
   }
   
+  header h1 {
+    font-family: 'Brush Script MT', cursive;
+  }
+
   header input, header button {
     margin-top: 1rem;
   }
