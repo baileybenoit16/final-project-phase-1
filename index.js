@@ -61,7 +61,7 @@ function displayCocktails(cocktails) {
             cocktailDiv.innerHTML = `
                 <h3>${cocktail.strDrink}</h3>
                 <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" style="height: 100px;">
-                <p>Click to view details</p>
+                <p>Click to view recipe</p>
             `;
             cocktailDiv.addEventListener('click', () => {
                 displayCocktailDetails(cocktail);
@@ -69,7 +69,7 @@ function displayCocktails(cocktails) {
             cocktailList.appendChild(cocktailDiv);
         });
     } else {
-        cocktailList.innerHTML = '<p>Search for recipes of any cocktail you like!</p>';
+        cocktailList.innerHTML = '<p>No results found</p>';
     }
 }
 
