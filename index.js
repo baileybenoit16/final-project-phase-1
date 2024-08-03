@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchData();
 });
-
-const cocktailList = document.getElementById('cocktail-list');
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
+const cocktailList = document.getElementById('cocktail-list');
 const cocktailDetails = document.getElementById('cocktail-details');
 
+function fetchData() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+    .then((resp) => resp.json())
+    .then((data) => {
+        displayDrinks(data.drinks);
+    });
+}
 
-function fetchData(searchTerm = 'blue') {
+function fetchData(searchTerm = 'margarita') {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchTerm}`)
     .then((resp) => resp.json())
     .then((data) => {
@@ -24,6 +30,15 @@ searchButton.addEventListener('click', () => {
     const searchTerm = searchInput.value;
     if (searchTerm.trim()) {
         fetchData(searchTerm);
+    }
+});
+
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const searchTerm = searchInput.value;
+        if (searchTerm.trim()) {
+            fetchData(searchTerm);
+        }
     }
 });
 
